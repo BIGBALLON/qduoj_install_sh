@@ -22,7 +22,7 @@ if [ $# -eq 3 ]; then
 fi
 
 # edit & copy oj.conf
-sed -i "s/server_name xxxxxxx.com/$3/g" oj.conf
+sed -i "s/xxxxxxx.com/$3/g" oj.conf
 cp oj.conf /etc/nginx/conf.d/oj.conf
 
 #create work dir set default conf
@@ -61,3 +61,5 @@ if [ $flag == 1 ]; then
 	sed -i "s/{YOUR_PASSWORD}/$2/g" docker-compose.yml
 fi
 docker-compose up -d
+
+service nginx restart
