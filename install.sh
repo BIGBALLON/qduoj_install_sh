@@ -15,7 +15,7 @@ pip install docker-compose
 git clone https://github.com/QingdaoU/OnlineJudge.git /home/OnlineJudge
 
 flag=0
-if [ $# -eq 2 ]; then
+if [ $# -eq 3 ]; then
 	MYSQL_PASS=$1
 	JUDGER_TOKEN=$2
 	flag=1
@@ -26,11 +26,7 @@ sed -i "s/server_name xxxxxxx.com/$3/g" oj.conf
 cp oj.conf /etc/nginx/conf.d/oj.conf
 
 #create work dir set default conf
-mkdir -p /home/data/mysql 
-mkdir -p /home/data/redis 
-mkdir -p /home/test_case 
-mkdir -p /home/log 
-mkdir -p /home/upload	
+mkdir -p /home/data/mysql /home/data/redis /home/test_case /home/log /home/upload
 
 
 #just pull the images
