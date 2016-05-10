@@ -9,9 +9,16 @@
 
 有任何问题欢迎加群进行讨论。  
 
+温馨提示： 如果你完全不了解qduoj，推荐先进行 [手动部署][1]
+
+
 ## 脚本使用方法
 
 以下所有命令均在root权限下使用
+
+```
+sudo su
+```
 
 ### 1.获取脚本
 
@@ -36,8 +43,11 @@ chmod +x install.sh
 ./install.sh 123456 123456 123.206.25.34
 ```
 
-执行过程中会运行docker容器
-需手动输入如下命令：
+执行过程中会运行docker容器，如下图 ``root@xxxxxxxxxx:/code#``
+
+![docker][2]
+
+这时，我们手动输入如下命令：
 
 ```
 python manage.py migrate
@@ -47,20 +57,22 @@ python tools/release_static.py
 exit
 ```
 
-待脚本运行完毕之后，OJ安装完毕！
+**待脚本运行完毕，OJ便搭建完毕！**
 
-TODO:
+输入我们配置的IP，这里测试用的IP是123.206.25.34，可以看到OJ部署完成。  
 
-- [ ] 操作判断返回值，是否成功
+![OJ index][3]
 
-- [ ] 使用root权限，修改目录权限
+### 4. 说明
 
-- [ ] 将oj代码和data等放在`/home`下一个单独文件夹中，安装文档也需要修改，这样更好些
+本脚本在 Ubuntu14.04 X64 下测试成功，脚本运行到OJ部署完成大约需要15-25分钟  
+「主要的时间是花费在pull 镜像上」。
+CentOS 或其他 linux版本不适用。。
 
-- [ ] docker版本的nginx（待讨论）
 
-- [ ] MySQL和判题密码随机生成就好，然后显示一下
+如果你有其他任何问题，请联系我或者提出issue！ 非常感谢！！  
 
-- [x] `mkdir -p` 可以放在一行
 
-- [ ] MySQL打算单独做一个版本，加入binlog，放在阿里云上，redis也使用阿里云的
+  [1]: https://github.com/QingdaoU/OnlineJudge/wiki/%E6%AD%A3%E5%BC%8F%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3
+  [2]: http://7xi3e9.com1.z0.glb.clouddn.com/docker.png
+  [3]: http://7xi3e9.com1.z0.glb.clouddn.com/ddag.jpg
