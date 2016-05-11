@@ -30,13 +30,14 @@ mkdir -p /home/data/mysql /home/data/redis /home/test_case /home/log /home/uploa
 
 
 #just pull the images
-docker pull daocloud.io/library/mysql
-docker pull registry.aliyuncs.com/acs-sample/sameersbn-redis
+
+docker pull registry.aliyuncs.com/v-image/mysql
+docker pull registry.aliyuncs.com/v-image/redis
 docker pull registry.aliyuncs.com/v-image/oj_web_server
 docker pull registry.aliyuncs.com/v-image/judger
 
-docker tag daocloud.io/library/mysql mysql
-docker tag registry.aliyuncs.com/acs-sample/sameersbn-redis redis
+docker tag registry.aliyuncs.com/v-image/mysql mysql
+docker tag registry.aliyuncs.com/v-image/redis redis
 docker tag registry.aliyuncs.com/v-image/oj_web_server qduoj/oj_web_server
 docker tag registry.aliyuncs.com/v-image/judger qduoj/judger
 
